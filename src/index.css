@@ -2,10 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
-  overflow: hidden; /* Sayfanın taşmasını önler */
+  font-family: "Inter", sans-serif; /* Modern yazı tipi */
+  background-color: #e0e5ec; /* Neomorphism arka plan rengi */
 }
 
 #root {
@@ -17,4 +19,53 @@ html, body {
 .flex {
   flex: 1; /* Flex alanını doldurur */
   overflow: auto; /* İçerik taşarsa kaydırma çubuğu ekler */
+}
+
+.card {
+  background-color: #ffffff; /* Kart arka plan rengi */
+  border-radius: 12px; /* Yuvarlatılmış köşeler */
+  box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.1), 
+              -8px -8px 15px rgba(255, 255, 255, 0.7); /* Neomorphism gölgesi */
+  padding: 2rem; /* İçerik için boşluk */
+  transition: transform 0.3s, box-shadow 0.3s; /* Geçiş efektleri */
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Hover efekti */
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2), 
+              -4px -4px 10px rgba(255, 255, 255, 0.8); /* Hover gölgesi */
+}
+
+button {
+  background-color: #3b82f6; /* Vurgu rengi */
+  color: #ffffff; /* Yazı rengi */
+  padding: 0.75rem 1.5rem; /* Düğme içi boşluk */
+  border: none; /* Kenar yok */
+  border-radius: 8px; /* Yuvarlatılmış köşeler */
+  cursor: pointer; /* İmleç değişimi */
+  transition: background-color 0.3s, transform 0.3s; /* Geçiş efekti */
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1), 
+              -4px -4px 10px rgba(255, 255, 255, 0.7); /* Neomorphism gölgesi */
+}
+
+button:hover {
+  background-color: #2563eb; /* Hover rengi */
+  transform: scale(1.01); /* Hover büyütme efekti */
+}
+
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.hover-scale {
+  transition: transform 0.3s ease-in-out;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
 }

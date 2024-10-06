@@ -13,7 +13,7 @@ import Shop from "./pages/Shop";
 import Chat from "./pages/Chat";
 import Settings from "./pages/Settings";
 import RightPanel from "./components/RightPanel";
-import { topCountries, topCustomers, recentOrders } from "./data/data"; 
+import { topCountries, topCustomers, recentOrders } from "./data/data";
 
 const App = () => {
   return (
@@ -21,7 +21,7 @@ const App = () => {
       <div className=''>
         <div className='flex'>
           <Sidebar />
-          <div className='flex-1 p-4 flex flex-col'>
+          <div className='flex-1 flex flex-col'>
             <Routes>
               <Route path='/' element={<Dashboard />} />
               <Route path='/analytics' element={<Analytics />} />
