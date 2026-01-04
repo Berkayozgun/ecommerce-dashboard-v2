@@ -2,70 +2,77 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
-body {
-  height: 100%;
-  margin: 0;
-  font-family: "Inter", sans-serif; /* Modern yazı tipi */
-  background-color: #e0e5ec; /* Neomorphism arka plan rengi */
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 nav: 202.2 65.1% 91.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
 }
 
-#root {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
 
-.flex {
-  flex: 1; /* Flex alanını doldurur */
-  overflow: auto; /* İçerik taşarsa kaydırma çubuğu ekler */
-}
-
-.card {
-  background-color: #ffffff; /* Kart arka plan rengi */
-  border-radius: 12px; /* Yuvarlatılmış köşeler */
-  box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.1), 
-              -8px -8px 15px rgba(255, 255, 255, 0.7); /* Neomorphism gölgesi */
-  padding: 2rem; /* İçerik için boşluk */
-  transition: transform 0.3s, box-shadow 0.3s; /* Geçiş efektleri */
-}
-
-.card:hover {
-  transform: translateY(-5px); /* Hover efekti */
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2), 
-              -4px -4px 10px rgba(255, 255, 255, 0.8); /* Hover gölgesi */
-}
-
-button {
-  background-color: #3b82f6; /* Vurgu rengi */
-  color: #ffffff; /* Yazı rengi */
-  padding: 0.75rem 1.5rem; /* Düğme içi boşluk */
-  border: none; /* Kenar yok */
-  border-radius: 8px; /* Yuvarlatılmış köşeler */
-  cursor: pointer; /* İmleç değişimi */
-  transition: background-color 0.3s, transform 0.3s; /* Geçiş efekti */
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1), 
-              -4px -4px 10px rgba(255, 255, 255, 0.7); /* Neomorphism gölgesi */
-}
-
-button:hover {
-  background-color: #2563eb; /* Hover rengi */
-  transform: scale(1.01); /* Hover büyütme efekti */
-}
-
-.glassmorphism {
-  background: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-}
-
-.hover-scale {
-  transition: transform 0.3s ease-in-out;
-}
-
-.hover-scale:hover {
-  transform: scale(1.05);
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
 }
